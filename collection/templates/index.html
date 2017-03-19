@@ -4,17 +4,12 @@
 {% endblock title %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <!-- here's the variable we are passing in -->
-    
-	
-	<p>There are six dogs! 
-		{% if number == 6 %}
-		    True
-		{% else %}
-		    False
-		{% endif %}
-	</p>
-
-
+    {% for thing in things %}
+    <h2>
+        <a href="{% url 'thing_detail' slug=thing.slug %}">
+            {{ thing.name }}
+        </a>
+    </h2>
+    <p>{{ thing.description }}</p>
+    {% endfor %}
 {% endblock content %}

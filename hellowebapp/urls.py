@@ -24,16 +24,22 @@ urlpatterns = [
         regex=r'^$', 
         view=views.index,
         name='home',
-    ),
+    	),
     url(
     	regex=r'^about/$',
         view=TemplateView.as_view(template_name='about.html'),
-        name='about'),
+        name='about',
+        ),
     url(
     	regex=r'^contact/$', 
         view=TemplateView.as_view(template_name='contact.html'),
-        name='contact'),
-
+        name='contact',
+        ),
+    url(
+    	regex=r'^things/(?P<slug>[-\w]+)/$', 
+    	view=views.thing_detail, 
+        name='thing_detail',
+        ),
 
     url(r'^admin/', admin.site.urls),
 ]
