@@ -40,6 +40,11 @@ urlpatterns = [
     	view=views.thing_detail, 
         name='thing_detail',
         ),
-
+    url(
+    	regex=r'^things/(?P<slug>[-\w]+)/edit/$', 
+        view=views.edit_thing,
+        name='edit_thing',
+        ),
+    
     url(r'^admin/', admin.site.urls),
 ]
