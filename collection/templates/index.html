@@ -7,6 +7,14 @@
     <h1>Hello World!</h1>
     <!-- here's the variable we are passing in -->
     
-	<p>{% if number %}Number exists!{% endif %}</p>
+	
+	<p>There are six dogs! 
+		{% if number == 6 %}
+		    True
+		{% else %}
+		    False
+		{% endif %}
+	</p>
+
 
 {% endblock content %}
